@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import './App.css';
+import BeerCards from '../BeerCards/BeerCards.js';
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      beer: {}
+      beer: []
     }
   }
 
@@ -24,6 +25,7 @@ class App extends Component {
         <div className="App-header">
           <h2>Your Beer Cooler</h2>
         </div>
+        <BeerCards data={ this.state.beer }/>
       </div>
     );
   }
