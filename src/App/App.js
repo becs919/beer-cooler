@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
+import $ from 'jquery';
 import './App.css';
 import BeerCards from '../BeerCards/BeerCards.js';
+import Form from '../Form/Form.js';
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      beer: []
+      beer: [],
+      isActive: false
     }
   }
 
@@ -51,6 +54,28 @@ class App extends Component {
     }
   }
 
+  beerFormActive() {
+    this.setState({ isActive: !this.state.isActive })
+  }
+
+  beerFormSave(e) {
+    e.preventDefault();
+    let name = $('#beer-name').val();
+    let likes = $('#beer-likes-value').val();
+
+    if (name.length <= 0 || likes.length <= 0) {
+      $('.error-msg').text('Error: Please Enter a Name & Amount of Likes')
+    } else {
+      this.postNewBeer(name, likes)
+      $('.error-msg').empty()
+    }
+    this.clearFields();
+  }
+
+  clearFields() {
+    $('#beer-name').val('');
+    $('#beer-likes-value').val('');
+  }
 
   render() {
     return (
@@ -58,6 +83,11 @@ class App extends Component {
         <div className='App-header'>
           <h2>The Best Beer Cooler</h2>
         </div>
+
+        <button className='add-beer-button' onClick={ () => { this.beerFormActive() } }>{ this.state.isActive === false? 'Add New Beer': 'Hide' }</button>
+
+        { this.state.isActive === true ? <Form onClick={ (e) => this.beerFormSave(e) }/> : null }
+
         <BeerCards data={ this.state.beer } onClick={ (e, likes, id) => this.updateLikes(e, likes, id) }/>
       </div>
     );

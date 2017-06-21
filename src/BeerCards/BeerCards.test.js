@@ -1,7 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { shallow, mount } from 'enzyme';
-import sinon from 'sinon';
+import { mount } from 'enzyme';
 import BeerCards from './BeerCards.js';
 
 describe('BeerCards', () => {
@@ -39,4 +37,27 @@ describe('BeerCards', () => {
     expect(wrapper.find('.beer-card').length).toBe(1);
   });
 
+  it('each BeerCard should have 2 buttons, a p and an h3', () => {
+    const wrapper = mount(<BeerCards data={ mockData }/>);
+
+    expect(wrapper.find('button').length).toBe(10);
+    expect(wrapper.find('p').length).toBe(5);
+    expect(wrapper.find('h3').length).toBe(5);
+  });
+
+  it('should increase likes', () => {
+    const wrapper = mount(<BeerCards data={ mockData } onClick={ jest.fn() }/>);
+
+    wrapper.find('.like-button').first().simulate('click');
+
+    expect(wrapper.find('.beer-likes').first().props().children).toBe(18)
+  });
+
+  it('should decrease likes', () => {
+    const wrapper = mount(<BeerCards data={ mockData } onClick={ jest.fn() }/>);
+
+    wrapper.find('.dislike-button').first().simulate('click');
+
+    expect(wrapper.find('.beer-likes').first().props().children).toBe(16)
+  });
 });
