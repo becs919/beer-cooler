@@ -1,6 +1,42 @@
 .beer-form {
   background-color: white;
-  width: 30%;
-  height: 100px;
-  margin-top: 0px;
+  width: 50%;
+  height: 200px;
+  margin: 0px auto;
+  border: 2px solid #222;
+}
+
+.form-title {
+  font-weight: bold;
+  font-size: 18px;
+  margin: 8px;
+}
+
+.error-msg {
+  color: red;
+  margin: 7px;
+}
+
+label {
+  display: block;
+  font-size: 17px;
+}
+
+form input {
+  margin: 10px;
+  height: 17px;
+  outline: none;
+}
+
+.submit-button {
+  outline: none;
+  border: none;
+  background-color: #222;
+  color: white;
+  font-size: 12px;
+  padding: 10px;
+  font-weight:lighter;
+  width: auto;
+  height: auto;
+  margin-bottom: 0px;
 }
