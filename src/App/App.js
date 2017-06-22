@@ -18,7 +18,8 @@ class App extends Component {
   }
 
   fetchBeers() {
-    fetch('http://beer.fluentcloud.com/v1/beer')
+    const proxyURL = 'https://cors-anywhere.herokuapp.com/';
+    fetch(proxyURL + 'http://beer.fluentcloud.com/v1/beer')
     .then(response => response.json())
     .then(data => this.setState({ beer: data }))
     .catch(error => console.error(error))
