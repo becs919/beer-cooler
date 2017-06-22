@@ -8,9 +8,13 @@ const BeerCards = ({ data, onClick }) => {
       data.map(beer => {
         return (
           <div key={ beer.id } data-id={ beer.id }>
+
             <h3>{ beer.name }</h3>
+
             <p>likes: <span className='beer-likes'>{ beer.likes }</span></p>
+
             <button className='like-button' onClick={ (e, likes, id) => onClick(e, beer.likes, beer.id) }>Like</button>
+            
             <button className='dislike-button' onClick={ (e, likes, id) => onClick(e, beer.likes, beer.id) }>Dislike</button>
           </div>
         )

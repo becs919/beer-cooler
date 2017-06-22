@@ -58,7 +58,7 @@ class App extends Component {
   }
 
   beerFormActive() {
-    this.setState({ isActive: !this.state.isActive })
+    this.setState({ isActive: !this.state.isActive });
   }
 
   beerFormSave(e) {
@@ -67,10 +67,10 @@ class App extends Component {
     let likes = $('#beer-likes-value').val();
 
     if (name.length <= 0 || likes.length <= 0) {
-      $('.error-msg').text('Error: Please Enter a Name & Amount of Likes')
+      $('.error-msg').text('Error: Please Enter a Name & Amount of Likes');
     } else {
-      this.postNewBeer(name, likes)
-      $('.error-msg').empty()
+      this.postNewBeer(name, likes);
+      $('.error-msg').empty();
     }
     this.clearFields();
   }
@@ -84,9 +84,11 @@ class App extends Component {
     return (
       <div className='App'>
         <div className='App-header'>
-          <h2>The Best Beer Cooler</h2>
-        </div>
 
+          <h2>The Best Beer Cooler</h2>
+
+        </div>
+        
         <button className='add-beer-button' onClick={ () => { this.beerFormActive() } }>{ this.state.isActive === false? 'Add New Beer': 'Hide' }</button>
 
         { this.state.isActive === true ? <Form onClick={ (e) => this.beerFormSave(e) }/> : null }
