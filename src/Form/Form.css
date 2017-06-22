@@ -39,6 +39,12 @@ form input {
   font-weight:lighter;
   width: auto;
   height: auto;
+  border: 1px solid #222;
+}
+
+.submit-button:hover {
+  background-color: lightgray;
+  color: #222;
 }
 
 @media screen and (max-width: 823px) {
