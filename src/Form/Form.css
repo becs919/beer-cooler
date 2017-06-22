@@ -1,15 +1,15 @@
 .beer-form {
   background-color: white;
   width: 50%;
-  height: 200px;
-  margin: 0px auto;
+  height: auto;
+  margin: 10px auto;
   border: 2px solid #222;
 }
 
 .form-title {
   font-weight: bold;
   font-size: 18px;
-  margin: 8px;
+  margin: 10px;
 }
 
 .error-msg {
@@ -26,6 +26,7 @@ form input {
   margin: 10px;
   height: 17px;
   outline: none;
+  border: 1px solid #222;
 }
 
 .submit-button {
@@ -38,5 +39,14 @@ form input {
   font-weight:lighter;
   width: auto;
   height: auto;
-  margin-bottom: 0px;
+}
+
+@media screen and (max-width: 823px) {
+    .beer-form {
+        height: auto;
+        width: 80%;
+    }
+
+    form input {
+    }
 }
