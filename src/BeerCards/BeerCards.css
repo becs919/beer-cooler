@@ -16,3 +16,10 @@
   padding: 7px;
   font-weight:lighter;
 }
+
+@media screen and (max-width: 823px) {
+    .beer-card div {
+        height: auto;
+        width: 80%;
+    }
+}
