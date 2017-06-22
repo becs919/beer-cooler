@@ -1,6 +1,7 @@
 body, html {
   margin: 0;
   padding: 0;
+  height: 100%;
   font-family: sans-serif;
   position: relative;
   overflow-x: hidden;
@@ -16,7 +17,7 @@ body:before {
     height: 100%;
     z-index: -1;
     opacity: 0.5;
-    background: url(./craft-beer.jpg) repeat center center fixed;
+    background: url(./craft-beer.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
