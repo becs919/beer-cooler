@@ -1,5 +1,24 @@
-body {
+body, html {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  position: relative;
+  overflow-x: hidden;
+}
+
+body:before {
+    content: ' ';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.5;
+    background: url(./craft-beer.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
