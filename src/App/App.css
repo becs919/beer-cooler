@@ -18,4 +18,11 @@
   color: white;
   padding: 15px;
   font-size: 15px;
+  border: 1px solid #222;
+}
+
+.add-beer-button:hover {
+  background-color: lightgray;
+  color: #222;
+  border: 1px solid #222;
 }

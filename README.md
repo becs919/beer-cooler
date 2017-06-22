@@ -4,4 +4,5 @@ A basic beer cooler that allows a user to see a list of the available beers, add
 
 * [See it live!](https://becs919.github.io/beer-cooler/)
 
-![Record-it](http://g.recordit.co/o1zTWQ5kwy.gif)
+![Record-it](http://g.recordit.co/FL4YBJDinz.gif)
+![Record-it](http://g.recordit.co/LCkwg6nrXI.gif)
