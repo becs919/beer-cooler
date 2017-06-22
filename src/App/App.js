@@ -4,6 +4,8 @@ import './App.css';
 import BeerCards from '../BeerCards/BeerCards.js';
 import Form from '../Form/Form.js';
 
+const proxyURL = 'https://cors-anywhere.herokuapp.com/';
+
 class App extends Component {
   constructor() {
     super();
@@ -18,7 +20,6 @@ class App extends Component {
   }
 
   fetchBeers() {
-    const proxyURL = 'https://cors-anywhere.herokuapp.com/';
     fetch(proxyURL + 'http://beer.fluentcloud.com/v1/beer')
     .then(response => response.json())
     .then(data => this.setState({ beer: data }))
@@ -26,7 +27,7 @@ class App extends Component {
   }
 
   updateBeerLikes(id, likes) {
-    fetch(`http://beer.fluentcloud.com/v1/beer/${id}`, {
+    fetch(proxyURL + `http://beer.fluentcloud.com/v1/beer/${id}`, {
       method: 'PUT',
       headers: {'Content-type': 'application/json'},
       body: JSON.stringify({ likes })
@@ -36,7 +37,7 @@ class App extends Component {
   }
 
   postNewBeer(name, likes) {
-    fetch('http://beer.fluentcloud.com/v1/beer', {
+    fetch(proxyURL + 'http://beer.fluentcloud.com/v1/beer', {
       method: 'POST',
       headers: {'Content-type': 'application/json'},
       body: JSON.stringify({ name, likes })
