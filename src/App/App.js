@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import $ from 'jquery';
 import './App.css';
 import BeerCards from '../BeerCards/BeerCards.js';
@@ -94,6 +95,11 @@ class App extends Component {
       </div>
     );
   }
+};
+
+App.propTypes = {
+  beer: PropTypes.array,
+  isActive: PropTypes.bool
 };
 
 export default App;
